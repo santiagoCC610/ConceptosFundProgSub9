@@ -27,7 +27,7 @@ public class GenerateInfoFiles {
                 String[] parts = identifier.split(";");
                 String tipo = parts[0];
                 String numero = parts[1];
-                int randomSalesCount = 5 + RANDOM.nextInt(46); // entre 5 y 50 ventas
+                int randomSalesCount = 5 + RANDOM.nextInt(46);
                 createSalesMenFile(randomSalesCount, "sales_" + tipo + "_" + numero, tipo, numero);
             }
 
@@ -66,8 +66,8 @@ public class GenerateInfoFiles {
         try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
             for (int i = 1; i <= productsCount; i++) {
                 String name = randomProductName(i);
-                double price = 1.0 + RANDOM.nextInt(200) + RANDOM.nextDouble(); // 1.0 .. 200.999
-                price = Math.round(price * 100.0) / 100.0; // redondear a 2 decimales
+                double price = 1.0 + RANDOM.nextInt(200) + RANDOM.nextDouble();
+                price = Math.round(price * 100.0) / 100.0; //
                 bw.write(i + ";" + name + ";" + price);
                 bw.newLine();
             }
@@ -100,7 +100,7 @@ public class GenerateInfoFiles {
                     ids.add(Integer.parseInt(parts[0]));
                 }
             } else {
-                // fallback por si no existe products.txt
+
                 for (int i = 1; i <= 10; i++) ids.add(i);
             }
         } catch (IOException e) {
