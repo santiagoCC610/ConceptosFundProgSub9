@@ -89,23 +89,33 @@ public class GenerateInfoFiles {
     }
 
     private static List<Integer> sampleProductIds() {
-        List<Integer> ids = new ArrayList<>();
+       // Create a list to store product IDs
+        List<Integer> ids = new ArrayList<>(); 
         try {
-            Path p = Paths.get(OUTPUT_DIR, "products.txt");
+           // Define the path to the products file
+            Path p = Paths.get(OUTPUT_DIR, "products.txt"); 
+           // Check if the file exists
             if (Files.exists(p)) {
-                List<String> lines = Files.readAllLines(p);
+               // Read all lines from the file
+                List<String> lines = Files.readAllLines(p); 
+                // Iterate through each line
                 for (String line : lines) {
-                    if (line.trim().isEmpty()) continue;
+                    // Skip empty lines
+                    if (line.trim().isEmpty()) continue; 
+                    // Split the line by semicolon
                     String[] parts = line.split(";");
+                     // Add the first part (product ID) to the list
                     ids.add(Integer.parseInt(parts[0]));
                 }
             } else {
-
+                // If file doesn't exist, add default IDs from 1 to 10
                 for (int i = 1; i <= 10; i++) ids.add(i);
             }
         } catch (IOException e) {
+            // In case of error, add default IDs from 1 to 10
             for (int i = 1; i <= 10; i++) ids.add(i);
         }
+        // Return the list of product IDs
         return ids;
     }
 
