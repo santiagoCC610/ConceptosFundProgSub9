@@ -89,66 +89,55 @@ public class GenerateInfoFiles {
     }
 
     private static List<Integer> sampleProductIds() {
-       // Create a list to store product IDs
-        List<Integer> ids = new ArrayList<>(); 
+        List<Integer> ids = new ArrayList<>(); // Create a list to store product IDs
         try {
-           // Define the path to the products file
-            Path p = Paths.get(OUTPUT_DIR, "products.txt"); 
-           // Check if the file exists
-            if (Files.exists(p)) {
-               // Read all lines from the file
-                List<String> lines = Files.readAllLines(p); 
-                // Iterate through each line
-                for (String line : lines) {
-                    // Skip empty lines
-                    if (line.trim().isEmpty()) continue; 
-                    // Split the line by semicolon
-                    String[] parts = line.split(";");
-                     // Add the first part (product ID) to the list
-                    ids.add(Integer.parseInt(parts[0]));
+            Path p = Paths.get(OUTPUT_DIR, "products.txt"); // Define the path to the products file
+            if (Files.exists(p)) { // Check if the file exists
+                List<String> lines = Files.readAllLines(p); // Read all lines from the file
+                for (String line : lines) { // Iterate through each line
+                    if (line.trim().isEmpty()) continue; // Skip empty lines
+                    String[] parts = line.split(";"); // Split the line by semicolon
+                    ids.add(Integer.parseInt(parts[0])); // Add the first part (product ID) to the list
                 }
             } else {
-                // If file doesn't exist, add default IDs from 1 to 10
-                for (int i = 1; i <= 10; i++) ids.add(i);
+                for (int i = 1; i <= 10; i++) ids.add(i); // If file doesn't exist, add default IDs from 1 to 10
             }
         } catch (IOException e) {
-            // In case of error, add default IDs from 1 to 10
-            for (int i = 1; i <= 10; i++) ids.add(i);
+            for (int i = 1; i <= 10; i++) ids.add(i); // In case of error, add default IDs from 1 to 10
         }
-        // Return the list of product IDs
-        return ids;
+        return ids;// Return the list of product IDs
     }
 
     private static List<String> readSalesmenIdentifiers() throws IOException {
-        List<String> identifiers = new ArrayList<>();
-        Path p = Paths.get(OUTPUT_DIR, "salesmen_info.txt");
-        if (!Files.exists(p)) return identifiers;
-        List<String> lines = Files.readAllLines(p);
-        for (String line : lines) {
-            if (line.trim().isEmpty()) continue;
-            String[] parts = line.split(";");
-            if (parts.length >= 2) {
+        List<String> identifiers = new ArrayList<>(); // Create a list to store salesman identifiers
+        Path p = Paths.get(OUTPUT_DIR, "salesmen_info.txt"); // Define the path to the salesmen info file
+        if (!Files.exists(p)) return identifiers; // If the file doesn't exist, return empty list
+        List<String> lines = Files.readAllLines(p); // Read all lines from the file
+        for (String line : lines) { // Iterate through each line
+            if (line.trim().isEmpty()) continue; // Skip empty lines
+            String[] parts = line.split(";"); // Split the line by semicolon
+            if (parts.length >= 2) { // If the line has at least two parts, add identifier (type;number)
                 identifiers.add(parts[0] + ";" + parts[1]);
             }
         }
-        return identifiers;
+        return identifiers; // Return the list of identifiers
     }
 
     private static String pickRandomDocType() {
-        String[] types = {"CC", "CE", "TI", "NIT"};
-        return types[RANDOM.nextInt(types.length)];
+        String[] types = {"CC", "CE", "TI", "NIT"}; // Define possible document types
+        return types[RANDOM.nextInt(types.length)]; // Return a random document type from the array
     }
 
-    private static String randomProductName(int idx) {
+    private static String randomProductName(int idx) { // Define a list of product name prefixes
         String[] words = {
                 "Nova", "Prime", "Aero", "Ultra", "Zen",
                 "Flex", "Edge", "Core", "Pulse", "Quantum",
                 "Solar", "Titan", "Wave", "Fusion", "Spark"
         };
-        return words[RANDOM.nextInt(words.length)] + " Product " + idx;
+        return words[RANDOM.nextInt(words.length)] + " Product " + idx; // Return a random prefix combined with "Product" and the index
     }
 
-    private static String randomFirstName() {
+    private static String randomFirstName() { // Define a list of possible first name
         String[] firsts = {
                 "Santiago", "María", "Juan", "Luisa", "Carlos",
                 "Tatiana", "Andrés", "Catalina", "Diego", "Valentina",
@@ -158,10 +147,10 @@ public class GenerateInfoFiles {
                 "David Santiago",
                 "Angie Tatiana"
         };
-        return firsts[RANDOM.nextInt(firsts.length)];
+        return firsts[RANDOM.nextInt(firsts.length)]; // Return a random first name from the array
     }
 
-    private static String randomLastName() {
+    private static String randomLastName() { // Define a list of possible last names
         String[] lasts = {
                 "González","Rodríguez","Martínez","López","Pérez",
                 "Gómez","Ramírez","Sosa","Castro","Vargas",
@@ -171,6 +160,6 @@ public class GenerateInfoFiles {
                 "Herrera Reales",
                 "Moscoso Arevalo"
         };
-        return lasts[RANDOM.nextInt(lasts.length)];
+        return lasts[RANDOM.nextInt(lasts.length)]; // Return a random last name from the array
     }
 }
