@@ -1,6 +1,6 @@
 import java.io.BufferedWriter;
 import java.io.File; //represents files and directories 
-import java.io.FileWriter; //escribe caracteres en archivos 
+import java.io.FileWriter; //escribe caracteres en archivoss
 import java.io.IOException; 
 import java.nio.file.Files; //file operations
 import java.nio.file.Path;
