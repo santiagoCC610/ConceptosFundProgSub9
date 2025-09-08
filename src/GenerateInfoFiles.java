@@ -1,73 +1,59 @@
 import java.io.BufferedWriter;
-import java.io.File;
+import java.io.File; // represents files and directories
+import java.io.FileWriter; // writes characters to files
 import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.io.File; // Represents files and directories
-import java.io.FileWriter; // Writes characters in archives
-import java.io.IOException; 
-import java.nio.file.Files; // File operations
+import java.nio.file.Files; // file operations
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random; // Random number generator
+import java.util.Random; // random number generator
+import java.util.Locale;
 
 public class GenerateInfoFiles {
 
+    /**
+     * Directory where the generated files will be stored.
+     */
     private static final String OUTPUT_DIR = "input";
-    private static final String FILE_PRODUCTS = "products.txt";
-    private static final String FILE_SALESMEN_INFO = "salesmen_info.txt";
-    private static final Random RANDOM = new Random(12345);
 
     /**
-     * Entry point: generates products, salespeople and a sales file for each
-     * salesperson listed in salesmen_info.txt.
+     * Pseudo-random generator with a fixed seed to make results reproducible.
      */
-    private static final String OUTPUT_DIR = "input"; // Directory where files that are generated are stored
-    private static final Random RANDOM = new Random(12345); // Random generator with fixed quantity of numbers
+    private static final Random RANDOM = new Random(12345);
 
     public static void main(String[] args) {
         try {
             ensureOutputDir();
-            ensureOutputDir(); // Ensures the "input" folder exists
  
+            // 1) Generate pseudo-random product catalog
             createProductsFile(20);
-            createProductsFile(20); // Creates a file with twenty products
 
+            // 2) Generate pseudo-random salesmen info
             createSalesManInfoFile(10);
-            createSalesManInfoFile(10); // Creates a file with ten different persons of the store
 
+            // 3) For each salesman, generate a pseudo-random sales file
             List<String> salesmen = readSalesmenIdentifiers();
             for (String identifier : salesmen) {
                 String[] parts = identifier.split(";");
-                String tipo = parts[0];
-                String numero = parts[1];
+                String documentType = parts[0];
+                String documentNumber = parts[1];
                 int randomSalesCount = 5 + RANDOM.nextInt(46);
-                createSalesMenFile(randomSalesCount, "sales_" + tipo + "_" + numero, tipo, numero);
-            List<String> salesmen = readSalesmenIdentifiers(); // Reads the identifier for the workers of the store
-            for (String identifier : salesmen) { // Changes or iterates for each salesman
-                String[] parts = identifier.split(";"); // Divides the part into type and ; number
-                String tipo = parts[0]; // Document type
-                String numero = parts[1]; // Document number
-                int randomSalesCount = 5 + RANDOM.nextInt(46); // Random number of sale between 5 and 46
-                createSalesMenFile(randomSalesCount, "sales_" + tipo + "_" + numero, tipo, numero); // Generates the file or report for rhe salesman
+                createSalesMenFile(randomSalesCount, "sales_" + documentType + "_" + documentNumber, documentType, documentNumber);
             }
 
-            System.out.println("GenerateInfoFiles: Archivos generados correctamente en ./" + OUTPUT_DIR);
-            System.out.println("GenerateInfoFiles: Archivos generados correctamente en ./" + OUTPUT_DIR); // Gives the message when was successfully created or generated the file
+            System.out.println("GenerateInfoFiles: Files successfully generated at ./" + OUTPUT_DIR);
         } catch (Exception e) {
-            System.err.println("Error al generar archivos: " + e.getMessage());
+            System.err.println("Error generating files: " + e.getMessage());
             e.printStackTrace();
             System.exit(1);
-            System.err.println("Error al generar archivos: " + e.getMessage()); // If it is not successful it prints this message and shows the route for next step
-            e.printStackTrace(); // Shows the route
-            System.exit(1); // Shows this code
         }
     }
 
     /**
-     * Ensures the output directory exists.
+     * Ensures the output directory exists. If it does not exist, it is created.
+     *
+     * @throws IOException if the directory cannot be created
      */
     private static void ensureOutputDir() throws IOException {
         Path p = Paths.get(OUTPUT_DIR);
@@ -77,64 +63,66 @@ public class GenerateInfoFiles {
     }
 
     /**
-     * Generates a sales file for a salesperson.
-     * First line: DocumentType;DocumentNumber
-     * Next lines: ProductID;Quantity;
+     * Generates a sales file for a given salesman.
+     * The file will have the following structure:
+     * - First line: <TipoDocumentoVendedor>;<NumeroDocumentoVendedor>
+     * - One line per sale: <IDProducto>;<CantidadVendida>
      *
-     * @param randomSalesCount number of sales to generate
-     * @param fileBaseName     file base name without extension
-     * @param tipoDocumento    salesperson document type (e.g., CC)
-     * @param numeroDocumento  salesperson document number
+     * @param randomSalesCount number of sale lines to generate (>= 0)
+     * @param fileBaseName     base file name (without extension) for the output file
+     * @param tipoDocumento    document type for the salesman (e.g., CC, CE, TI, NIT)
+     * @param numeroDocumento  document number for the salesman
+     * @throws IOException if the file cannot be written
      */
-            Files.createDirectories(p); // This part creates the pat for the input folder and if it doesn't exist it'll create it
-        }
-    }
-
     public static void createSalesMenFile(int randomSalesCount, String fileBaseName, String tipoDocumento, String numeroDocumento) throws IOException {
         List<Integer> productIds = sampleProductIds();
-        List<Integer> productIds = sampleProductIds(); // Get the id of the valid products
         File f = new File(OUTPUT_DIR, fileBaseName + ".txt");
-        try (BufferedWriter bw = Files.newBufferedWriter(f.toPath(), StandardCharsets.UTF_8)) {
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
             bw.write(tipoDocumento + ";" + numeroDocumento);
             bw.newLine();
             for (int i = 0; i < randomSalesCount; i++) {
                 int pid = productIds.get(RANDOM.nextInt(productIds.size()));
                 int qty = 1 + RANDOM.nextInt(10);
-                // Required format: ProductID;Quantity;
-                bw.write(pid + ";" + qty + ";");
+                bw.write(pid + ";" + qty);
                 bw.newLine();
             }
         }
     }
 
     /**
-     * Test helper overload: creates a sales file for a salesperson identified
-     * by name and id. The document type is chosen pseudo-randomly. The file is
-     * named "sales_<name>_<id>.txt" (spaces replaced by underscore).
+     * Convenience overload that follows the required signature in the assignment:
+     * createSalesMenFile(int randomSalesCount, String name, long id).
+     * This method will:
+     * - Use the provided {@code name} to compose the output file name.
+     * - Use a default document type ("CC") and the provided {@code id} as the document number.
      *
-     * @param randomSalesCount number of sales to generate
-     * @param name             salesperson name (used in the file name)
-     * @param id               salesperson document number
+     * @param randomSalesCount number of sale lines to generate (>= 0)
+     * @param name             salesman name, used only to build the output file name
+     * @param id               salesman identifier used as document number (first line)
+     * @throws IOException if the file cannot be written
      */
     public static void createSalesMenFile(int randomSalesCount, String name, long id) throws IOException {
-        String tipo = pickRandomDocType();
-        String numeroDocumento = Long.toString(id);
-        String safeName = name.replaceAll("\\s+", "_");
-        String baseName = "sales_" + safeName + "_" + numeroDocumento;
-        createSalesMenFile(randomSalesCount, baseName, tipo, numeroDocumento);
+        String sanitizedName = (name == null || name.trim().isEmpty())
+                ? "unknown"
+                : name.trim().replaceAll("[^A-Za-z0-9_\\-]+", "_");
+        String fileBaseName = "sales_" + sanitizedName + "_" + id;
+        createSalesMenFile(randomSalesCount, fileBaseName, "CC", Long.toString(id));
     }
 
     /**
-     * Generates a product file with format: ID;Name;Price
+     * Generates a products catalog file named {@code products.txt} with the following structure:
+     * - One product per line: <IDProducto>;<NombreProducto>;<PrecioPorUnidad>
      *
-     * @param productsCount number of products to generate
+     * @param productsCount number of products to generate (>= 1)
+     * @throws IOException if the file cannot be written
      */
     public static void createProductsFile(int productsCount) throws IOException {
-        File f = new File(OUTPUT_DIR, FILE_PRODUCTS);
-        try (BufferedWriter bw = Files.newBufferedWriter(f.toPath(), StandardCharsets.UTF_8)) {
+        File f = new File(OUTPUT_DIR, "products.txt");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
             for (int i = 1; i <= productsCount; i++) {
                 String name = randomProductName(i);
                 double price = 1.0 + RANDOM.nextInt(200) + RANDOM.nextDouble();
+                price = Math.round(price * 100.0) / 100.0; // round to 2 decimals
                 String priceStr = String.format(Locale.US, "%.2f", price);
                 bw.write(i + ";" + name + ";" + priceStr);
                 bw.newLine();
@@ -143,14 +131,16 @@ public class GenerateInfoFiles {
     }
 
     /**
-     * Generates the salespeople info file: DocumentType;DocumentNumber;FirstNames;LastNames
+     * Generates a salesmen information file named {@code salesmen_info.txt} with the following structure:
+     * - One salesman per line: <TipoDocumento>;<NumeroDocumento>;<Nombres>;<Apellidos>
      *
-     * @param salesmanCount number of salespeople to generate
+     * @param salesmanCount number of salesmen to generate (>= 1)
+     * @throws IOException if the file cannot be written
      */
     public static void createSalesManInfoFile(int salesmanCount) throws IOException {
-        File f = new File(OUTPUT_DIR, FILE_SALESMEN_INFO);
-        try (BufferedWriter bw = Files.newBufferedWriter(f.toPath(), StandardCharsets.UTF_8)) {
-            for (int i = 0; i < salesmanCount; i++) {
+        File f = new File(OUTPUT_DIR, "salesmen_info.txt");
+        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
+            for (int i = 0; i < salesmanCount; i++) { 
                 String tipo = pickRandomDocType();
                 long id = 10000000L + Math.abs(RANDOM.nextLong() % 90000000L);
                 String firstNames = randomFirstName();
@@ -161,43 +151,12 @@ public class GenerateInfoFiles {
         }
     }
 
-    /**
-     * Samples product IDs from products.txt. If it does not exist, returns default
-     * IDs in the range [1..10].
-     */
-    public static void createProductsFile(int productsCount) throws IOException {            
-        File f = new File(OUTPUT_DIR, "products.txt"); // Creates the new folder called products
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
-            for (int i = 1; i <= productsCount; i++) {  // Generates product count
-                String name = randomProductName(i);  // Generates products name from the random list
-                double price = 1.0 + RANDOM.nextInt(200) + RANDOM.nextDouble();   // Creates a random price between 1 and 200
-                price = Math.round(price * 100.0) / 100.0; // It round the cost to one decimal
-                bw.write(i + ";" + name + ";" + price); // Writes in this order the product count, name and price
-                bw.newLine(); // Add a new line
-            }
-        }
-    }
-
-    public static void createSalesManInfoFile(int salesmanCount) throws IOException {  
-        File f = new File(OUTPUT_DIR, "salesmen_info.txt"); // File with the salesmen info
-        try (BufferedWriter bw = new BufferedWriter(new FileWriter(f))) {
-            for (int i = 0; i < salesmanCount; i++) { 
-                String tipo = pickRandomDocType(); // Take a salesman an add randomly a doc type
-                long id = 10000000L + Math.abs(RANDOM.nextLong() % 90000000L); // Quantity of numbers of the document
-                String firstNames = randomFirstName(); // Selects random names
-                String lastNames = randomLastName(); // Selects random last names
-                bw.write(tipo + ";" + id + ";" + firstNames + ";" + lastNames); // Writes this line with the order tipo, id, first name and lastname
-                bw.newLine(); // Ads a new line
-            }
-        }
-    }
-
     private static List<Integer> sampleProductIds() {
         List<Integer> ids = new ArrayList<>();
         try {
-            Path p = Paths.get(OUTPUT_DIR, FILE_PRODUCTS);
+            Path p = Paths.get(OUTPUT_DIR, "products.txt");
             if (Files.exists(p)) {
-                List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
+                List<String> lines = Files.readAllLines(p);
                 for (String line : lines) {
                     if (line.trim().isEmpty()) continue;
                     String[] parts = line.split(";");
@@ -212,17 +171,11 @@ public class GenerateInfoFiles {
         return ids;
     }
 
-    /**
-     * Reads salesperson identifiers from salesmen_info.txt in format
-     * DocumentType;DocumentNumber.
-     *
-     * @return list of strings "DocumentType;DocumentNumber"
-     */
     private static List<String> readSalesmenIdentifiers() throws IOException {
         List<String> identifiers = new ArrayList<>();
-        Path p = Paths.get(OUTPUT_DIR, FILE_SALESMEN_INFO);
+        Path p = Paths.get(OUTPUT_DIR, "salesmen_info.txt");
         if (!Files.exists(p)) return identifiers;
-        List<String> lines = Files.readAllLines(p, StandardCharsets.UTF_8);
+        List<String> lines = Files.readAllLines(p);
         for (String line : lines) {
             if (line.trim().isEmpty()) continue;
             String[] parts = line.split(";");
@@ -234,7 +187,7 @@ public class GenerateInfoFiles {
     }
 
     /**
-     * Returns a random document type.
+     * Picks a random valid document type.
      */
     private static String pickRandomDocType() {
         String[] types = {"CC", "CE", "TI", "NIT"};
@@ -242,19 +195,19 @@ public class GenerateInfoFiles {
     }
 
     /**
-     * Generates a pseudo-random name for a product given its index.
+     * Generates a pseudo-random product name using a small dictionary and the product index.
      */
-    private static String randomProductName(int idx) {
+    private static String randomProductName(int productIndex) {
         String[] words = {
                 "Nova", "Prime", "Aero", "Ultra", "Zen",
                 "Flex", "Edge", "Core", "Pulse", "Quantum",
                 "Solar", "Titan", "Wave", "Fusion", "Spark"
         };
-        return words[RANDOM.nextInt(words.length)] + " Product " + idx;
+        return words[RANDOM.nextInt(words.length)] + " Product " + productIndex;
     }
 
     /**
-     * Returns a random first name (or combination of names).
+     * Returns a pseudo-random first name.
      */
     private static String randomFirstName() {
         String[] firsts = {
@@ -270,7 +223,7 @@ public class GenerateInfoFiles {
     }
 
     /**
-     * Returns a random last name (or combination of last names).
+     * Returns a pseudo-random last name.
      */
     private static String randomLastName() {
         String[] lasts = {
