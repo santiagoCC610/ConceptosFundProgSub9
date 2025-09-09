@@ -1,13 +1,13 @@
 import java.io.BufferedWriter;
-import java.io.File; // represents files and directories
-import java.io.FileWriter; // writes characters to files
+import java.io.File; // Represents files and directories
+import java.io.FileWriter; // Writes characters to files
 import java.io.IOException;
-import java.nio.file.Files; // file operations
+import java.nio.file.Files; // File operations
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random; // random number generator
+import java.util.Random; // Random number generator
 import java.util.Locale;
 
 public class GenerateInfoFiles {
