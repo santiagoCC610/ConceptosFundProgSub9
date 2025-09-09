@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Random; // Random number generator
 import java.util.Locale;
 
+//Developed by SAMUEL DUQUE PORRAS, CARLOS ALBERTO CUADRADO RODRÍGUEZ, DAVID SANTIAGO HERRERA REALES, ANGIE TATIANA MOSCOSO AREVALO & SANTIAGO CEBALLOS CORREA
+
 public class GenerateInfoFiles {
 
     /**
@@ -26,13 +28,13 @@ public class GenerateInfoFiles {
         try {
             ensureOutputDir();
  
-            // 1) Generate pseudo-random product catalog
+            // 1) Generate pseudo-random product catalog.
             createProductsFile(20);
 
-            // 2) Generate pseudo-random salesmen info
+            // 2) Generate pseudo-random salesmen info.
             createSalesManInfoFile(10);
 
-            // 3) For each salesman, generate a pseudo-random sales file
+            // 3) For each salesman, generate a pseudo-random sales file.
             List<String> salesmen = readSalesmenIdentifiers();
             for (String identifier : salesmen) {
                 String[] parts = identifier.split(";");
