@@ -213,7 +213,7 @@
      */
     private static String randomFirstName() {
         String[] firsts = {
-                "Santiago", "María", "Juan", "Luisa", "Carlos",
+                "Santiago", "Maria", "Juan", "Luisa", "Carlos",
                 "Tatiana", "Andrés", "Catalina", "Diego", "Valentina",
                 "Santiago",
                 "Carlos Alberto",
@@ -229,8 +229,8 @@
      */
     private static String randomLastName() {
         String[] lasts = {
-                "González","Rodríguez","Martínez","López","Pérez",
-                "Gómez","Ramírez","Sosa","Castro","Vargas",
+                "Gonzalez","Rodriguez","Martinez","Lopez","Perez",
+                "Gomez","Ramirez","Sosa","Castro","Vargas",
                 "Ceballos Correa",
                 "Cuadrado Rodríguez",
                 "Duque Porras",
