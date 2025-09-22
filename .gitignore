@@ -1,7 +1,12 @@
 # Java artifacts
 *.class
 *.jar
-/input/*
-/output/*
+
+# Permitir input y output completos
+!/input/
+!/output/
+
+# IntelliJ IDEA
+# Subir archivo .iml
+# (pero no la carpeta .idea porque guarda configs locales del IDE)
 .idea/
-*.iml

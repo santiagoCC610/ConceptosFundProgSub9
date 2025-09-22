@@ -1,0 +1,10 @@
+TI;76745168;Valentina;González
+TI;87511378;Diego;Rodríguez
+CE;73988525;Samuel;Rodríguez
+TI;34377404;Valentina;Sosa
+TI;85427539;Carlos Alberto;Rodríguez
+NIT;93453766;Santiago;Moscoso Arevalo
+CC;78188520;Carlos Alberto;Ramírez
+NIT;19840402;Angie Tatiana;López
+CE;96267607;Tatiana;Herrera Reales
+CE;82925850;Santiago;Duque Porras
