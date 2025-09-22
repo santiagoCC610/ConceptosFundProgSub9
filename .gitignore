@@ -1,0 +1,7 @@
+# Java artifacts
+*.class
+*.jar
+/input/*
+/output/*
+.idea/
+*.iml
