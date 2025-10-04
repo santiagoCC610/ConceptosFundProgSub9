@@ -1,4 +1,4 @@
-# Proyecto Final - Conceptos Fundamentales de Programación
+# Final delivery - Programming Fundamental Concepts
 
 ## HOW TO RUN
 
