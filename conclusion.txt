@@ -1,0 +1,5 @@
+Conclusión del Proyecto (Ejemplo)
+
+1. Lo aprendido: Se reforzó la lógica de programación en Java, el manejo de archivos y la organización de proyectos en múltiples clases.
+2. Aplicaciones profesionales: El conocimiento adquirido puede aplicarse al desarrollo de aplicaciones empresariales que requieran generación, procesamiento y reporte de información.
+3. Dificultades: Ajustar la estructura para cumplir con los requisitos de solo dos clases con método main y garantizar la correcta generación/lectura de archivos.
