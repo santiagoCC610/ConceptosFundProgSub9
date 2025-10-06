@@ -524,4 +524,4 @@ notepad output\executive_summary.txt
 
 **🎉 ¡Gracias por usar el Sistema de Gestión de Productos y Vendedores!**
 
-**© 2024 - Conceptos Fundamentales de Programación - Entrega Final Semanas 7 y 8**
+**© 2025 - Conceptos Fundamentales de Programación - Entrega Final Semanas 7 y 8**
