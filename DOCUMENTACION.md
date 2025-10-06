@@ -733,7 +733,7 @@ Este proyecto proporciona una base sólida para:
 **Curso:** Conceptos Fundamentales de Programación  
 **Entrega:** Semanas 7 y 8 - Entrega Final  
 **Versión:** 2.0  
-**Fecha:** Octubre 2024  
+**Fecha:** Octubre 2025
 **Lenguaje:** Java 8  
 **Paradigma:** Programación Orientada a Objetos  
 
