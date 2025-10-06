@@ -1,4 +1,4 @@
-# 🚀 Sistema de Gestión de Productos y Vendedores
+# 🚀 Product and Salesman Management System
 ## Conceptos Fundamentales de Programación - Semanas 7 y 8
 
 [![Java Version](https://img.shields.io/badge/Java-8-orange)](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
@@ -7,69 +7,69 @@
 
 ---
 
-## 📋 DESCRIPCIÓN DEL PROYECTO
+## 📋 PROJECT DESCRIPTION
 
-Sistema completo de gestión empresarial desarrollado en Java que permite:
+Complete business management system developed in Java that allows:
 
-- ✅ **Generar** datos de prueba automáticamente (productos, vendedores, ventas)
-- ✅ **Procesar** y analizar información empresarial
-- ✅ **Calcular** comisiones, bonos, inventarios y estadísticas
-- ✅ **Generar** reportes detallados en múltiples formatos (TXT, CSV)
-- ✅ **Validar** datos con manejo robusto de errores
+- ✅ **Generate** test data automatically (products, salesmen, sales)
+- ✅ **Process** and analyze business information
+- ✅ **Calculate** commissions, bonuses, inventories and statistics
+- ✅ **Generate** detailed reports in multiple formats (TXT, CSV)
+- ✅ **Validate** data with robust error handling
 
-### 🎯 Características Principales
+### 🎯 Main Features
 
-- **Modelos de Datos:** ProductModel y SalesmanModel con validación completa
-- **Generación Automática:** 15 productos, 10 vendedores, 30 ventas
-- **Análisis Completo:** Inventarios, comisiones, bonos, rankings, estadísticas
-- **6 Reportes:** Análisis de productos, vendedores, ventas y resumen ejecutivo
-- **Buenas Prácticas:** POO, validaciones, documentación Javadoc, código limpio
+- **Data Models:** ProductModel and SalesmanModel with complete validation
+- **Automatic Generation:** 15 products, 10 salesmen, 30 sales
+- **Complete Analysis:** Inventories, commissions, bonuses, rankings, statistics
+- **6 Reports:** Product analysis, salesmen, sales and executive summary
+- **Best Practices:** OOP, validations, Javadoc documentation, clean code
 
 ---
 
-## 📁 ESTRUCTURA DEL PROYECTO
+## 📁 PROJECT STRUCTURE
 
 ```
 ConceptosFundProgSub9-1/
-├── src/                          # Código fuente
-│   ├── GenerateInfoFiles.java   # Generador de datos de entrada
-│   ├── Main.java                 # Procesador y generador de reportes
-│   ├── ProductModel.java         # Modelo de productos con lógica de negocio
-│   └── SalesmanModel.java        # Modelo de vendedores con cálculo de comisiones
+├── src/                          # Source code
+│   ├── GenerateInfoFiles.java   # Input data generator
+│   ├── Main.java                 # Processor and report generator
+│   ├── ProductModel.java         # Product model with business logic
+│   └── SalesmanModel.java        # Salesman model with commission calculation
 │
-├── bin/                          # Clases compiladas (.class)
+├── bin/                          # Compiled classes (.class)
 │
-├── input/                        # Archivos de entrada (generados automáticamente)
-│   ├── data.txt                  # Datos simples de productos
-│   ├── data.csv                  # Datos estructurados de productos
-│   ├── products.txt              # Inventario completo con categorías
-│   ├── salesmen.txt              # Base de datos de vendedores
-│   └── sales_records.csv         # Registros de transacciones
+├── input/                        # Input files (automatically generated)
+│   ├── data.txt                  # Simple product data
+│   ├── data.csv                  # Structured product data
+│   ├── products.txt              # Complete inventory with categories
+│   ├── salesmen.txt              # Salesman database
+│   └── sales_records.csv         # Transaction records
 │
-├── output/                       # Reportes generados
-│   ├── product_report.txt        # Análisis detallado de productos
-│   ├── product_report.csv        # Datos de productos exportables
-│   ├── salesmen_report.txt       # Análisis de desempeño de vendedores
-│   ├── salesmen_report.csv       # Datos de vendedores exportables
-│   ├── sales_records_report.txt  # Reporte de transacciones
-│   └── executive_summary.txt     # Resumen ejecutivo del sistema
+├── output/                       # Generated reports
+│   ├── product_report.txt        # Detailed product analysis
+│   ├── product_report.csv        # Exportable product data
+│   ├── salesmen_report.txt       # Salesman performance analysis
+│   ├── salesmen_report.csv       # Exportable salesman data
+│   ├── sales_records_report.txt  # Transaction report
+│   └── executive_summary.txt     # System executive summary
 │
-├── README.md                     # Esta guía de ejecución
-├── DOCUMENTACION.md              # Documentación técnica completa (30+ páginas)
-└── conclusion.txt                # Conclusiones detalladas del proyecto
+├── README.md                     # This execution guide
+├── DOCUMENTACION.md              # Complete technical documentation (30+ pages)
+└── conclusion.txt                # Detailed project conclusions
 ```
 
 ---
 
-## 🔧 REQUISITOS DEL SISTEMA
+## 🔧 SYSTEM REQUIREMENTS
 
-### Software Necesario
+### Required Software
 
-- **Java Development Kit (JDK) 8 o superior**
-- **Terminal/PowerShell** con acceso a comandos `java` y `javac`
-- **Editor de texto** o IDE (opcional: IntelliJ IDEA, Eclipse, VSCode)
+- **Java Development Kit (JDK) 8 or higher**
+- **Terminal/PowerShell** with access to `java` and `javac` commands
+- **Text editor** or IDE (optional: IntelliJ IDEA, Eclipse, VSCode)
 
-### Sistemas Operativos Soportados
+### Supported Operating Systems
 
 - ✅ Windows 10/11
 - ✅ macOS
@@ -77,70 +77,70 @@ ConceptosFundProgSub9-1/
 
 ---
 
-## ⚡ GUÍA DE INSTALACIÓN Y EJECUCIÓN
+## ⚡ INSTALLATION AND EXECUTION GUIDE
 
-### 📌 Paso 0: Verificar Instalación de Java
+### 📌 Step 0: Verify Java Installation
 
 ```powershell
-# Verificar versión de Java Runtime
+# Verify Java Runtime version
 java -version
 
-# Verificar versión del compilador Java
+# Verify Java compiler version
 javac -version
 ```
 
-**Salida esperada:**
+**Expected output:**
 ```
 java version "1.8.0_202"
 Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
 javac 1.8.0_202
 ```
 
-**⚠️ Si `javac` no está disponible:**
+**⚠️ If `javac` is not available:**
 
 ```powershell
-# Windows: Configurar PATH temporalmente
+# Windows: Configure PATH temporarily
 $env:PATH = "C:\Program Files\Java\jdk1.8.0_202\bin;" + $env:PATH
 
-# Verificar nuevamente
+# Verify again
 javac -version
 ```
 
 ---
 
-### 📌 Paso 1: Compilar el Proyecto
+### 📌 Step 1: Compile the Project
 
 ```powershell
-# Crear directorio para clases compiladas
+# Create directory for compiled classes
 mkdir bin
 
-# Compilar todos los archivos Java
+# Compile all Java files
 javac -d bin src\*.java
 ```
 
-**Resultado esperado:**
+**Expected result:**
 ```
-✓ No hay errores de compilación
-✓ Archivos .class creados en bin/
+✓ No compilation errors
+✓ .class files created in bin/
 ```
 
-**⚠️ Solución de Problemas:**
+**⚠️ Troubleshooting:**
 
-Si aparece error "no se puede encontrar el símbolo", asegúrate de compilar todos los archivos juntos:
+If "cannot find symbol" error appears, make sure to compile all files together:
 ```powershell
 javac -d bin src\GenerateInfoFiles.java src\Main.java src\ProductModel.java src\SalesmanModel.java
 ```
 
 ---
 
-### 📌 Paso 2: Generar Datos de Entrada
+### 📌 Step 2: Generate Input Data
 
 ```powershell
-# Ejecutar el generador de datos
+# Run the data generator
 java -cp bin GenerateInfoFiles
 ```
 
-**Salida esperada:**
+**Expected output:**
 ```
 ============================================================
 GENERATION OF INPUT FILES - WEEKS 7-8
@@ -156,12 +156,12 @@ All input files successfully created in ./input
 ============================================================
 ```
 
-**✅ Verificación:**
+**✅ Verification:**
 ```powershell
-# Listar archivos creados
+# List created files
 dir input\
 
-# Debería mostrar:
+# Should display:
 # - data.txt
 # - data.csv
 # - products.txt
@@ -171,14 +171,14 @@ dir input\
 
 ---
 
-### 📌 Paso 3: Procesar Datos y Generar Reportes
+### 📌 Step 3: Process Data and Generate Reports
 
 ```powershell
-# Ejecutar el procesador principal
+# Run the main processor
 java -cp bin Main
 ```
 
-**Salida esperada:**
+**Expected output:**
 ```
 ======================================================================
 DATA PROCESSING AND REPORT GENERATION - WEEKS 7-8
@@ -201,12 +201,12 @@ All reports successfully created in ./output
 ======================================================================
 ```
 
-**✅ Verificación:**
+**✅ Verification:**
 ```powershell
-# Listar reportes generados
+# List generated reports
 dir output\
 
-# Debería mostrar:
+# Should display:
 # - product_report.txt
 # - product_report.csv
 # - salesmen_report.txt
@@ -217,311 +217,311 @@ dir output\
 
 ---
 
-## 📊 REVISIÓN DE RESULTADOS
+## 📊 RESULTS REVIEW
 
-### Abrir Reportes Generados
+### Open Generated Reports
 
 ```powershell
-# Windows - Abrir con Notepad
+# Windows - Open with Notepad
 notepad output\executive_summary.txt
 notepad output\product_report.txt
 notepad output\salesmen_report.txt
 
-# Abrir CSV con Excel (si está instalado)
+# Open CSV with Excel (if installed)
 start output\product_report.csv
 start output\salesmen_report.csv
 ```
 
-### Contenido de los Reportes
+### Report Contents
 
-1. **product_report.txt** - Análisis completo del inventario:
-   - Valor total del inventario
-   - Productos con bajo stock
-   - Distribución por categorías
-   - Lista detallada ordenada por valor
+1. **product_report.txt** - Complete inventory analysis:
+   - Total inventory value
+   - Low stock products
+   - Distribution by categories
+   - Detailed list sorted by value
 
-2. **salesmen_report.txt** - Análisis de desempeño:
-   - Revenue total generado
-   - Comisiones calculadas (10%)
-   - Vendedores con bono ($50,000+)
+2. **salesmen_report.txt** - Performance analysis:
+   - Total revenue generated
+   - Calculated commissions (10%)
+   - Salesmen with bonus ($50,000+)
    - Top 5 performers
-   - Distribución regional
+   - Regional distribution
 
-3. **sales_records_report.txt** - Transacciones individuales:
-   - Lista de todas las ventas
-   - Total y promedio de ventas
+3. **sales_records_report.txt** - Individual transactions:
+   - List of all sales
+   - Total and average sales
 
-4. **executive_summary.txt** - Resumen del proyecto:
-   - Funcionalidades demostradas
-   - Estructura del proyecto
-   - Reportes generados
+4. **executive_summary.txt** - Project summary:
+   - Demonstrated functionalities
+   - Project structure
+   - Generated reports
 
-5. **Archivos CSV** - Datos exportables para análisis en Excel
+5. **CSV Files** - Exportable data for Excel analysis
 
 ---
 
-## 🎯 CASOS DE USO
+## 🎯 USE CASES
 
-### Caso 1: Análisis de Inventario
+### Case 1: Inventory Analysis
 
 ```powershell
-# 1. Generar datos
+# 1. Generate data
 java -cp bin GenerateInfoFiles
 
-# 2. Procesar
+# 2. Process
 java -cp bin Main
 
-# 3. Revisar reporte de productos
+# 3. Review product report
 notepad output\product_report.txt
 ```
 
-**Información obtenida:**
-- Valor total del inventario
-- Productos que necesitan reabastecimiento
-- Distribución de productos por categoría
-- Los productos más valiosos
+**Information obtained:**
+- Total inventory value
+- Products that need restocking
+- Product distribution by category
+- Most valuable products
 
-### Caso 2: Cálculo de Comisiones
+### Case 2: Commission Calculation
 
 ```powershell
-# Revisar reporte de vendedores
+# Review salesmen report
 notepad output\salesmen_report.txt
 ```
 
-**Información obtenida:**
-- Comisión de cada vendedor (10% del revenue)
-- Vendedores que califican para bono ($5,000)
-- Ranking de mejores vendedores
-- Promedio de venta por vendedor
+**Information obtained:**
+- Each salesman's commission (10% of revenue)
+- Salesmen qualifying for bonus ($5,000)
+- Best salesmen ranking
+- Average sale per salesman
 
-### Caso 3: Exportar a Excel
+### Case 3: Export to Excel
 
 ```powershell
-# Abrir archivos CSV con Excel
+# Open CSV files with Excel
 start output\product_report.csv
 start output\salesmen_report.csv
 ```
 
-**Uso:**
-- Análisis adicional en Excel
-- Creación de gráficos
-- Filtrado y ordenamiento personalizado
-- Compartir con otros sistemas
+**Usage:**
+- Additional analysis in Excel
+- Chart creation
+- Custom filtering and sorting
+- Sharing with other systems
 
 ---
 
-## 🔍 SOLUCIÓN DE PROBLEMAS
+## 🔍 TROUBLESHOOTING
 
-### Error: "javac no se reconoce como comando"
+### Error: "javac is not recognized as a command"
 
-**Causa:** Java JDK no está en el PATH del sistema.
+**Cause:** Java JDK is not in the system PATH.
 
-**Solución:**
+**Solution:**
 ```powershell
-# Opción 1: Agregar al PATH temporalmente
+# Option 1: Add to PATH temporarily
 $env:PATH = "C:\Program Files\Java\jdk1.8.0_202\bin;" + $env:PATH
 
-# Opción 2: Usar ruta completa
+# Option 2: Use full path
 "C:\Program Files\Java\jdk1.8.0_202\bin\javac" -d bin src\*.java
 ```
 
-### Error: "no se ha encontrado o cargado la clase principal"
+### Error: "main class not found or loaded"
 
-**Causa:** Classpath incorrecto o archivos no compilados.
+**Cause:** Incorrect classpath or files not compiled.
 
-**Solución:**
+**Solution:**
 ```powershell
-# Recompilar
+# Recompile
 javac -d bin src\*.java
 
-# Ejecutar con classpath correcto
+# Execute with correct classpath
 java -cp bin GenerateInfoFiles
 java -cp bin Main
 ```
 
-### Error: "Error al escribir archivo"
+### Error: "Error writing file"
 
-**Causa:** Permisos insuficientes o disco lleno.
+**Cause:** Insufficient permissions or disk full.
 
-**Solución:**
+**Solution:**
 ```powershell
-# Ejecutar como administrador o verificar permisos
-# Asegurar espacio en disco (necesita ~5MB)
+# Run as administrator or verify permissions
+# Ensure disk space (needs ~5MB)
 ```
 
-### Los reportes están vacíos
+### Reports are empty
 
-**Causa:** No se ejecutó GenerateInfoFiles primero.
+**Cause:** GenerateInfoFiles was not executed first.
 
-**Solución:**
+**Solution:**
 ```powershell
-# Paso 1: Generar datos
+# Step 1: Generate data
 java -cp bin GenerateInfoFiles
 
-# Paso 2: Procesar datos
+# Step 2: Process data
 java -cp bin Main
 ```
 
 ---
 
-## 📚 DOCUMENTACIÓN ADICIONAL
+## 📚 ADDITIONAL DOCUMENTATION
 
-### Documentación Completa
+### Complete Documentation
 
-Para información técnica detallada, arquitectura del sistema, diagramas y explicaciones de cada componente, consulta:
+For detailed technical information, system architecture, diagrams and explanations of each component, see:
 
-**📘 [DOCUMENTACION.md](DOCUMENTACION.md)** - 30+ páginas que incluyen:
-- Arquitectura del sistema
-- Documentación de cada clase y método
-- Diagramas de flujo
-- Buenas prácticas aplicadas
-- Ejemplos detallados
-- Referencias y recursos
+**📘 [DOCUMENTACION.md](DOCUMENTACION.md)** - 30+ pages including:
+- System architecture
+- Documentation of each class and method
+- Flow diagrams
+- Applied best practices
+- Detailed examples
+- References and resources
 
-### Conclusiones del Proyecto
+### Project Conclusions
 
-Para aprendizajes, dificultades enfrentadas y resultados obtenidos, consulta:
+For learnings, challenges faced and results obtained, see:
 
-**📄 [conclusion.txt](conclusion.txt)** - Conclusiones detalladas que incluyen:
-- Lo aprendido en el proyecto
-- Aplicaciones profesionales
-- Dificultades y soluciones
-- Competencias desarrolladas
-- Próximos pasos
-
----
-
-## 🎓 CONCEPTOS DEMOSTRADOS
-
-Este proyecto demuestra dominio en:
-
-### Programación Orientada a Objetos
-- ✅ Clases con encapsulación apropiada
-- ✅ Constructores con validación
-- ✅ Métodos con responsabilidades claras
-- ✅ Sobrecarga de métodos y constructores
-
-### Manejo de Archivos
-- ✅ Lectura de archivos TXT y CSV
-- ✅ Escritura formateada con PrintWriter
-- ✅ Manejo de directorios
-- ✅ Codificación UTF-8
-
-### Estructuras de Datos
-- ✅ ArrayList para colecciones dinámicas
-- ✅ HashMap para agrupaciones
-- ✅ Ordenamiento con Comparator
-- ✅ Operaciones de filtrado y búsqueda
-
-### Lógica de Negocio
-- ✅ Validación de datos
-- ✅ Cálculos de comisiones y bonos
-- ✅ Generación de estadísticas
-- ✅ Reglas de negocio complejas
-
-### Buenas Prácticas
-- ✅ Código limpio y legible
-- ✅ Documentación Javadoc completa
-- ✅ Manejo de excepciones
-- ✅ Constantes en lugar de valores mágicos
-- ✅ Separación de responsabilidades
+**📄 [conclusion.txt](conclusion.txt)** - Detailed conclusions including:
+- What was learned in the project
+- Professional applications
+- Challenges and solutions
+- Developed competencies
+- Next steps
 
 ---
 
-## 📞 SOPORTE
+## 🎓 DEMONSTRATED CONCEPTS
 
-Si encuentras problemas:
+This project demonstrates mastery of:
 
-1. ✅ Verifica que Java 8 esté correctamente instalado
-2. ✅ Asegúrate de compilar antes de ejecutar
-3. ✅ Ejecuta GenerateInfoFiles antes que Main
-4. ✅ Revisa la sección de Solución de Problemas
-5. ✅ Consulta la documentación completa en DOCUMENTACION.md
+### Object-Oriented Programming
+- ✅ Classes with appropriate encapsulation
+- ✅ Constructors with validation
+- ✅ Methods with clear responsibilities
+- ✅ Method and constructor overloading
 
----
+### File Handling
+- ✅ Reading TXT and CSV files
+- ✅ Formatted writing with PrintWriter
+- ✅ Directory management
+- ✅ UTF-8 encoding
 
-## 🏆 CRÉDITOS
+### Data Structures
+- ✅ ArrayList for dynamic collections
+- ✅ HashMap for grouping
+- ✅ Sorting with Comparator
+- ✅ Filtering and searching operations
 
-**Curso:** Conceptos Fundamentales de Programación  
-**Entrega:** Semanas 7 y 8 - Entrega Final  
-**Versión:** 2.0  
-**Fecha:** Octubre 2024  
-**Lenguaje:** Java 8 (JDK 1.8.0)  
-**Paradigma:** Programación Orientada a Objetos  
+### Business Logic
+- ✅ Data validation
+- ✅ Commission and bonus calculations
+- ✅ Statistics generation
+- ✅ Complex business rules
 
----
-
-## ⭐ CARACTERÍSTICAS DESTACADAS
-
-### 🎨 Interfaz de Consola Clara
-- Mensajes informativos con formato profesional
-- Separadores visuales para mejor legibilidad
-- Códigos de estado ([OK], [ERROR], [WARNING])
-- Progreso detallado de cada operación
-
-### 📈 Análisis Completo
-- 15 productos en 5 categorías diferentes
-- 10 vendedores distribuidos en 5 regiones
-- 30 transacciones de venta
-- 6 reportes completos generados
-
-### 💼 Lógica de Negocio Realista
-- Precios lógicos según tipo de producto
-- Cálculo automático de comisiones (10%)
-- Sistema de bonos por desempeño ($50,000+)
-- Detección de bajo inventario (<10 unidades)
-- Rankings y estadísticas empresariales
-
-### 🔒 Validación Robusta
-- Validación en constructores
-- Validación en setters
-- Mensajes de error descriptivos
-- Manejo de datos inválidos sin detener el proceso
+### Best Practices
+- ✅ Clean and readable code
+- ✅ Complete Javadoc documentation
+- ✅ Exception handling
+- ✅ Constants instead of magic values
+- ✅ Separation of responsibilities
 
 ---
 
-## 🚀 EJECUCIÓN RÁPIDA (Quick Start)
+## 📞 SUPPORT
 
-Para usuarios experimentados:
+If you encounter problems:
+
+1. ✅ Verify that Java 8 is correctly installed
+2. ✅ Make sure to compile before executing
+3. ✅ Run GenerateInfoFiles before Main
+4. ✅ Review the Troubleshooting section
+5. ✅ Consult the complete documentation in DOCUMENTACION.md
+
+---
+
+## 🏆 CREDITS
+
+**Course:** Fundamental Programming Concepts  
+**Delivery:** Weeks 7 and 8 - Final Submission  
+**Version:** 2.0  
+**Date:** October 2024  
+**Language:** Java 8 (JDK 1.8.0)  
+**Paradigm:** Object-Oriented Programming  
+
+---
+
+## ⭐ FEATURED CHARACTERISTICS
+
+### 🎨 Clear Console Interface
+- Informative messages with professional formatting
+- Visual separators for better readability
+- Status codes ([OK], [ERROR], [WARNING])
+- Detailed progress of each operation
+
+### 📈 Complete Analysis
+- 15 products in 5 different categories
+- 10 salesmen distributed in 5 regions
+- 30 sales transactions
+- 6 complete reports generated
+
+### 💼 Realistic Business Logic
+- Logical prices according to product type
+- Automatic commission calculation (10%)
+- Performance bonus system ($50,000+)
+- Low inventory detection (<10 units)
+- Business rankings and statistics
+
+### 🔒 Robust Validation
+- Validation in constructors
+- Validation in setters
+- Descriptive error messages
+- Invalid data handling without stopping the process
+
+---
+
+## 🚀 QUICK START
+
+For experienced users:
 
 ```powershell
-# 1. Compilar
+# 1. Compile
 javac -d bin src\*.java
 
-# 2. Generar datos
+# 2. Generate data
 java -cp bin GenerateInfoFiles
 
-# 3. Procesar y generar reportes
+# 3. Process and generate reports
 java -cp bin Main
 
-# 4. Ver resumen
+# 4. View summary
 notepad output\executive_summary.txt
 ```
 
 ---
 
-## 📝 NOTAS IMPORTANTES
+## 📝 IMPORTANT NOTES
 
-- ⚠️ El proyecto requiere Java 8 o superior
-- ⚠️ Los archivos se generan en directorios `input/` y `output/`
-- ⚠️ Los archivos CSV usan punto y coma (;) como separador
-- ⚠️ La codificación es UTF-8 para soportar caracteres especiales
-- ⚠️ Los datos son generados aleatoriamente pero de forma reproducible
-- ✅ El proyecto funciona sin dependencias externas
-- ✅ Todo el procesamiento es automático (no requiere entrada del usuario)
-
----
-
-## ✨ PRÓXIMOS PASOS DESPUÉS DE LA EJECUCIÓN
-
-1. **Revisar los reportes generados** en la carpeta `output/`
-2. **Consultar la documentación técnica** en `DOCUMENTACION.md`
-3. **Leer las conclusiones** en `conclusion.txt`
-4. **Explorar el código fuente** en `src/` para entender la implementación
-5. **Experimentar con modificaciones** (agregar productos, cambiar reglas de negocio)
+- ⚠️ The project requires Java 8 or higher
+- ⚠️ Files are generated in `input/` and `output/` directories
+- ⚠️ CSV files use semicolon (;) as separator
+- ⚠️ Encoding is UTF-8 to support special characters
+- ⚠️ Data is randomly generated but reproducibly
+- ✅ The project works without external dependencies
+- ✅ All processing is automatic (no user input required)
 
 ---
 
-**🎉 ¡Gracias por usar el Sistema de Gestión de Productos y Vendedores!**
+## ✨ NEXT STEPS AFTER EXECUTION
+
+1. **Review generated reports** in the `output/` folder
+2. **Consult technical documentation** in `DOCUMENTACION.md`
+3. **Read conclusions** in `conclusion.txt`
+4. **Explore source code** in `src/` to understand the implementation
+5. **Experiment with modifications** (add products, change business rules)
+
+---
+
+**🎉 Thank you for using the Product and Salesman Management System!**
 
 **© 2025 - Conceptos Fundamentales de Programación - Entrega Final Semanas 7 y 8**
