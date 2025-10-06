@@ -282,7 +282,7 @@ Programación cubiertos en las semanas 7 y 8 del curso.
 FIN DE LAS CONCLUSIONES
 ===============================================================================
 
-Fecha de conclusión: Octubre 2024
+Fecha de conclusión: Octubre 2025
 Versión del proyecto: 2.0
 Estado: COMPLETADO ✓
 
