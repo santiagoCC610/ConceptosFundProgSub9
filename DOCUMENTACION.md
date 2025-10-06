@@ -762,7 +762,7 @@ Este proyecto es material educativo desarrollado como parte del curso de Concept
 
 ---
 
-**© 2024 - Conceptos Fundamentales de Programación - Todos los derechos reservados**
+**© 2025 - Conceptos Fundamentales de Programación - Todos los derechos reservados**
 
 ---
 
