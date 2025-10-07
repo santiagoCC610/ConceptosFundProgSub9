@@ -1,4 +1,4 @@
-# 🚀 Product and Salesman Management System
+# Product and Salesman Management System
 ## Conceptos Fundamentales de Programación - Semanas 7 y 8
 
 [![Java Version](https://img.shields.io/badge/Java-8-orange)](https://www.oracle.com/java/technologies/javase/javase8-archive-downloads.html)
@@ -7,17 +7,17 @@
 
 ---
 
-## 📋 PROJECT DESCRIPTION
+## PROJECT DESCRIPTION
 
 Complete business management system developed in Java that allows:
 
-- ✅ **Generate** test data automatically (products, salesmen, sales)
-- ✅ **Process** and analyze business information
-- ✅ **Calculate** commissions, bonuses, inventories and statistics
-- ✅ **Generate** detailed reports in multiple formats (TXT, CSV)
-- ✅ **Validate** data with robust error handling
+- **Generate** test data automatically (products, salesmen, sales)
+- **Process** and analyze business information
+- **Calculate** commissions, bonuses, inventories and statistics
+- **Generate** detailed reports in multiple formats (TXT, CSV)
+- **Validate** data with robust error handling
 
-### 🎯 Main Features
+###  Main Features
 
 - **Data Models:** ProductModel and SalesmanModel with complete validation
 - **Automatic Generation:** 15 products, 10 salesmen, 30 sales
@@ -27,7 +27,7 @@ Complete business management system developed in Java that allows:
 
 ---
 
-## 📁 PROJECT STRUCTURE
+##  PROJECT STRUCTURE
 
 ```
 ConceptosFundProgSub9-1/
@@ -61,7 +61,7 @@ ConceptosFundProgSub9-1/
 
 ---
 
-## 🔧 SYSTEM REQUIREMENTS
+##  SYSTEM REQUIREMENTS
 
 ### Required Software
 
@@ -71,15 +71,15 @@ ConceptosFundProgSub9-1/
 
 ### Supported Operating Systems
 
-- ✅ Windows 10/11
-- ✅ macOS
-- ✅ Linux
+- Windows 10/11
+- macOS
+- Linux
 
 ---
 
-## ⚡ INSTALLATION AND EXECUTION GUIDE
+##  INSTALLATION AND EXECUTION GUIDE
 
-### 📌 Step 0: Verify Java Installation
+###  Step 0: Verify Java Installation
 
 ```powershell
 # Verify Java Runtime version
@@ -96,7 +96,7 @@ Java(TM) SE Runtime Environment (build 1.8.0_202-b08)
 javac 1.8.0_202
 ```
 
-**⚠️ If `javac` is not available:**
+** If `javac` is not available:**
 
 ```powershell
 # Windows: Configure PATH temporarily
@@ -108,7 +108,7 @@ javac -version
 
 ---
 
-### 📌 Step 1: Compile the Project
+###  Step 1: Compile the Project
 
 ```powershell
 # Create directory for compiled classes
@@ -124,7 +124,7 @@ javac -d bin src\*.java
 ✓ .class files created in bin/
 ```
 
-**⚠️ Troubleshooting:**
+** Troubleshooting:**
 
 If "cannot find symbol" error appears, make sure to compile all files together:
 ```powershell
@@ -133,7 +133,7 @@ javac -d bin src\GenerateInfoFiles.java src\Main.java src\ProductModel.java src\
 
 ---
 
-### 📌 Step 2: Generate Input Data
+###  Step 2: Generate Input Data
 
 ```powershell
 # Run the data generator
@@ -156,7 +156,7 @@ All input files successfully created in ./input
 ============================================================
 ```
 
-**✅ Verification:**
+** Verification:**
 ```powershell
 # List created files
 dir input\
@@ -171,7 +171,7 @@ dir input\
 
 ---
 
-### 📌 Step 3: Process Data and Generate Reports
+###  Step 3: Process Data and Generate Reports
 
 ```powershell
 # Run the main processor
@@ -201,7 +201,7 @@ All reports successfully created in ./output
 ======================================================================
 ```
 
-**✅ Verification:**
+** Verification:**
 ```powershell
 # List generated reports
 dir output\
@@ -217,7 +217,7 @@ dir output\
 
 ---
 
-## 📊 RESULTS REVIEW
+##  RESULTS REVIEW
 
 ### Open Generated Reports
 
@@ -260,7 +260,7 @@ start output\salesmen_report.csv
 
 ---
 
-## 🎯 USE CASES
+##  USE CASES
 
 ### Case 1: Inventory Analysis
 
@@ -310,7 +310,7 @@ start output\salesmen_report.csv
 
 ---
 
-## 🔍 TROUBLESHOOTING
+## TROUBLESHOOTING
 
 ### Error: "javac is not recognized as a command"
 
@@ -364,13 +364,13 @@ java -cp bin Main
 
 ---
 
-## 📚 ADDITIONAL DOCUMENTATION
+## ADDITIONAL DOCUMENTATION
 
 ### Complete Documentation
 
 For detailed technical information, system architecture, diagrams and explanations of each component, see:
 
-**📘 [DOCUMENTACION.md](DOCUMENTACION.md)** - 30+ pages including:
+** [DOCUMENTACION.md](DOCUMENTACION.md)** - 30+ pages including:
 - System architecture
 - Documentation of each class and method
 - Flow diagrams
@@ -382,7 +382,7 @@ For detailed technical information, system architecture, diagrams and explanatio
 
 For learnings, challenges faced and results obtained, see:
 
-**📄 [conclusion.txt](conclusion.txt)** - Detailed conclusions including:
+** [conclusion.txt](conclusion.txt)** - Detailed conclusions including:
 - What was learned in the project
 - Professional applications
 - Challenges and solutions
@@ -391,56 +391,56 @@ For learnings, challenges faced and results obtained, see:
 
 ---
 
-## 🎓 DEMONSTRATED CONCEPTS
+##  DEMONSTRATED CONCEPTS
 
 This project demonstrates mastery of:
 
 ### Object-Oriented Programming
-- ✅ Classes with appropriate encapsulation
-- ✅ Constructors with validation
-- ✅ Methods with clear responsibilities
-- ✅ Method and constructor overloading
+- Classes with appropriate encapsulation
+- Constructors with validation
+- Methods with clear responsibilities
+- Method and constructor overloading
 
 ### File Handling
-- ✅ Reading TXT and CSV files
-- ✅ Formatted writing with PrintWriter
-- ✅ Directory management
-- ✅ UTF-8 encoding
+- Reading TXT and CSV files
+- Formatted writing with PrintWriter
+- Directory management
+- UTF-8 encoding
 
 ### Data Structures
-- ✅ ArrayList for dynamic collections
-- ✅ HashMap for grouping
-- ✅ Sorting with Comparator
-- ✅ Filtering and searching operations
+- ArrayList for dynamic collections
+- HashMap for grouping
+- Sorting with Comparator
+- Filtering and searching operations
 
 ### Business Logic
-- ✅ Data validation
-- ✅ Commission and bonus calculations
-- ✅ Statistics generation
-- ✅ Complex business rules
+- Data validation
+- Commission and bonus calculations
+- Statistics generation
+- Complex business rules
 
 ### Best Practices
-- ✅ Clean and readable code
-- ✅ Complete Javadoc documentation
-- ✅ Exception handling
-- ✅ Constants instead of magic values
-- ✅ Separation of responsibilities
+- Clean and readable code
+- Complete Javadoc documentation
+- Exception handling
+- Constants instead of magic values
+- Separation of responsibilities
 
 ---
 
-## 📞 SUPPORT
+## SUPPORT
 
 If you encounter problems:
 
-1. ✅ Verify that Java 8 is correctly installed
-2. ✅ Make sure to compile before executing
-3. ✅ Run GenerateInfoFiles before Main
-4. ✅ Review the Troubleshooting section
-5. ✅ Consult the complete documentation in DOCUMENTACION.md
+1. Verify that Java 8 is correctly installed
+2. Make sure to compile before executing
+3. Run GenerateInfoFiles before Main
+4. Review the Troubleshooting section
+5. Consult the complete documentation in DOCUMENTACION.md
 
 ---
 
-## 🏆 CREDITS
+## CREDITS
 
 **Course:** Fundamental Programming Concepts  
 **Delivery:** Weeks 7 and 8 - Final Submission  
@@ -451,28 +451,28 @@ If you encounter problems:
 
 ---
 
-## ⭐ FEATURED CHARACTERISTICS
+##  FEATURED CHARACTERISTICS
 
-### 🎨 Clear Console Interface
+### Clear Console Interface
 - Informative messages with professional formatting
 - Visual separators for better readability
 - Status codes ([OK], [ERROR], [WARNING])
 - Detailed progress of each operation
 
-### 📈 Complete Analysis
+### Complete Analysis
 - 15 products in 5 different categories
 - 10 salesmen distributed in 5 regions
 - 30 sales transactions
 - 6 complete reports generated
 
-### 💼 Realistic Business Logic
+### Realistic Business Logic
 - Logical prices according to product type
 - Automatic commission calculation (10%)
 - Performance bonus system ($50,000+)
 - Low inventory detection (<10 units)
 - Business rankings and statistics
 
-### 🔒 Robust Validation
+### Robust Validation
 - Validation in constructors
 - Validation in setters
 - Descriptive error messages
@@ -480,7 +480,7 @@ If you encounter problems:
 
 ---
 
-## 🚀 QUICK START
+## QUICK START
 
 For experienced users:
 
@@ -500,19 +500,19 @@ notepad output\executive_summary.txt
 
 ---
 
-## 📝 IMPORTANT NOTES
+## IMPORTANT NOTES
 
-- ⚠️ The project requires Java 8 or higher
-- ⚠️ Files are generated in `input/` and `output/` directories
-- ⚠️ CSV files use semicolon (;) as separator
-- ⚠️ Encoding is UTF-8 to support special characters
-- ⚠️ Data is randomly generated but reproducibly
-- ✅ The project works without external dependencies
-- ✅ All processing is automatic (no user input required)
+- The project requires Java 8 or higher
+- Files are generated in `input/` and `output/` directories
+- CSV files use semicolon (;) as separator
+- Encoding is UTF-8 to support special characters
+- Data is randomly generated but reproducibly
+- The project works without external dependencies
+- All processing is automatic (no user input required)
 
 ---
 
-## ✨ NEXT STEPS AFTER EXECUTION
+## NEXT STEPS AFTER EXECUTION
 
 1. **Review generated reports** in the `output/` folder
 2. **Consult technical documentation** in `DOCUMENTACION.md`
@@ -522,6 +522,6 @@ notepad output\executive_summary.txt
 
 ---
 
-**🎉 Thank you for using the Product and Salesman Management System!**
+** Thank you for using the Product and Salesman Management System!**
 
 **© 2025 - Conceptos Fundamentales de Programación - Entrega Final Semanas 7 y 8**
